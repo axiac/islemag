@@ -169,3 +169,69 @@ if ( ! function_exists( 'islemag_post_entry_date' ) ) {
 	}
 }
 add_action( 'islemag_entry_date', 'islemag_post_entry_date' );
+
+/**
+ * Post entry icon
+ */
+if ( ! function_exists('islemag_post_entry_icon' ) ) {
+	function islemag_post_entry_icon($context)
+	{
+		$id         = get_the_ID();
+		$icon_class = islemag_get_post_entry_icon_class($id);
+		apply_filters('islemag_post_entry_icon', $icon_class, $context);
+
+		if (! empty($icon_class)) {
+			?>
+			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
+			<?php
+		}
+	}
+}
+add_action( 'islemag_entry_icon', 'islemag_post_entry_icon' );
+
+/**
+ * Extension point for children themes
+ */
+if ( ! function_exists( 'islemag_get_post_entry_icon_class' ) ) {
+	/**
+	 * @param $id
+	 * @return string
+	 */
+	function islemag_get_post_entry_icon_class($id)
+	{
+		$format = get_post_format($id);
+		$icon_class = null;
+
+		switch ($format) {
+		case 'aside':
+			$icon_class = 'fa-file-text';
+			break;
+		case 'chat':
+			$icon_class = 'fa-comment';
+			break;
+		case 'gallery':
+			$icon_class = 'fa-file-image-o';
+			break;
+		case 'link':
+			$icon_class = 'fa-link';
+			break;
+		case 'image':
+			$icon_class = 'fa-picture-o';
+			break;
+		case 'quote':
+			$icon_class = 'fa-quote-right';
+			break;
+		case 'status':
+			$icon_class = 'fa-line-chart';
+			break;
+		case 'video':
+			$icon_class = 'fa-video-camera';
+			break;
+		case 'audio':
+			$icon_class = 'fa-headphones';
+			break;
+		}
+
+		return $icon_class;
+	}
+}

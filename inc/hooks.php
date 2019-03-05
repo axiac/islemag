@@ -115,3 +115,10 @@ function islemag_top_slider_posts_trigger() {
 function islemag_bottom_slider_posts_trigger() {
 	do_action( 'islemag_bottom_slider_posts' );
 }
+
+/**
+ * Hook for article icon
+ */
+function islemag_entry_icon($context) {
+	do_action( 'islemag_entry_icon', $context );
+}
