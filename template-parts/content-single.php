@@ -126,8 +126,7 @@ $post_id = get_the_ID();
 
 		if ( (bool) $islemag_single_post_hide_related_posts !== true ) { ?>
 
-			<h3 class="mb30 title-underblock custom blog-related-carousel-title"><?php esc_html_e( 'Related Posts', 'islemag' ); ?>
-				'</h3>
+			<h3 class="mb30 title-underblock custom blog-related-carousel-title"><?php esc_html_e( 'Related Posts', 'islemag' ); ?></h3>
 			<div class="blog-related-carousel owl-carousel small-nav">
 				<?php
 				$related = get_posts(
