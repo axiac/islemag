@@ -62,7 +62,7 @@
 								if ( ! empty( $islemag_footer_social_icons_decode ) ) {
 									foreach ( $islemag_footer_social_icons_decode as $icon ) {
 										if ( ! empty( $icon->icon_value ) ) {
-											echo '<a ' . ( empty( $icon->link ) ? '' : 'href="' . esc_url( $icon->link ) . '"' ) . ' class="footer-social-icon"><i class="fa ' . esc_attr( $icon->icon_value ) . '"></i></a>';
+											echo '<a ' . ( empty( $icon->link ) ? '' : 'href="' . esc_url( $icon->link ) . '"' ) . ' class="footer-social-icon"><i class="fab ' . esc_attr( $icon->icon_value ) . '"></i></a>';
 										}
 									}
 								}

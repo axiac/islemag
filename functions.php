@@ -342,7 +342,7 @@ function islemag_scripts() {
 
 	wp_enqueue_style( 'islemag-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'islemag-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.4.0' );
+	wp_enqueue_style( 'islemag-fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2' );
 
 	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 		wp_enqueue_script( 'islemag-script-index', get_template_directory_uri() . '/js/script.index.js', array( 'jquery' ), '1.0.0', true );
