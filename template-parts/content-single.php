@@ -94,6 +94,8 @@ $post_id = get_the_ID();
 					  datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></time>
 			</footer>
 
+			<?php get_template_part( 'template-parts/content', 'single-banner' ); ?>
+
 			<?php $islemag_single_post_hide_author = get_theme_mod( 'islemag_single_post_hide_author' ); ?>
 			<div class="about-author author vcard clearfix
 					<?php
